@@ -25,6 +25,7 @@ public class maxTeleOp extends LinearOpMode {
             robot.aim (gamepad2.left_stick_x/2);
 
             robot.lift(gamepad2.right_stick_y/2);
+            robot.lift(0.3);
 
             if (gamepad2.a) {
                 robot.spin(1);

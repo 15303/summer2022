@@ -34,8 +34,7 @@ public class JakeTeleOp extends LinearOpMode {
             } else if (gamepad2.dpad_down) {
                 robot.lift(-0.3);
             } else {
-                continue;
-                //robot.lift(0.01);
+                robot.lift(0);
             }
 
             robot.spin(gamepad2.right_trigger - gamepad2.left_trigger);

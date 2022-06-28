@@ -22,15 +22,15 @@ public class JakeTeleOp extends LinearOpMode {
             robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
 
             if (gamepad2.dpad_left) {
-                robot.aim(-0.5);
+                robot.aim(-0.2);
             } else if (gamepad2.dpad_right) {
-                robot.aim(0.5);
+                robot.aim(0.2);
             } else {
                 robot.aim(0);
             }
 
             if (gamepad2.dpad_up) {
-                robot.lift(0.7);
+                robot.lift(0.3);
             } else if (gamepad2.dpad_down) {
                 robot.lift(-0.3);
             } else {

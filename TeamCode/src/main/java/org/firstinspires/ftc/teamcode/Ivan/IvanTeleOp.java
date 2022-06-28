@@ -41,6 +41,12 @@ public class IvanTeleOp extends LinearOpMode {
             else {
                 robot.spin(0);
             }
+            robot.grab(gamepad2.right_trigger-gamepad2.left_trigger);
+            if (gamepad2.right_trigger==0) {
+                robot.grab(0.1);
+            }
+
+
 
             telemetry.addData("makeor", "Ivan");
             telemetry.update();

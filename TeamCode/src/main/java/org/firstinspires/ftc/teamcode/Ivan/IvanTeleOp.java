@@ -17,11 +17,14 @@ public class IvanTeleOp extends LinearOpMode {
         while (opModeIsActive()) {
             double joystickY = gamepad1.left_stick_y;
             robot.setPowers(joystickY, joystickY, joystickY, joystickY);
+            if(gamepad1.dpad_left) {
+                robot.frontLeft.setPower(1);
+            }
             robot.setPowers(1,1,1,1);
             robot.frontLeft.setPower(1);
 
             telemetry.addData("author", "Ivan");
-            telemetry update();
+            telemetry.update();
         }
     }
 }

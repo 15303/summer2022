@@ -21,7 +21,7 @@ public class JakeTeleOp extends LinearOpMode {
                 robot.frontLeft.setPower(1);
             }
 
-            robot.setPowers(1,1,1,1)
+            robot.setPowers(1,1,1,1);
             robot.frontLeft.setPower(1);
 
             telemetry.addData("author","Jake");

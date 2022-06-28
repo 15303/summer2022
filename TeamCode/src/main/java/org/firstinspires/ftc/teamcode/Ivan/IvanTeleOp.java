@@ -18,7 +18,7 @@ public class IvanTeleOp extends LinearOpMode {
             double joystickY = gamepad1.left_stick_y;
             robot.setPowers(joystickY, joystickY, joystickY, joystickY);
             if(gamepad1.dpad_left) {
-                robot.frontLeft.setPower(1);
+                robot.frontLeft.setPower(0);
             }
             robot.setPowers(1,1,1,1);
             robot.frontLeft.setPower(1);

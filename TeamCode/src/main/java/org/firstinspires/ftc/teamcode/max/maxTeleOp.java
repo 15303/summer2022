@@ -9,6 +9,9 @@ import org.firstinspires.ftc.teamcode.Robot;
 public class maxTeleOp extends LinearOpMode {
     Robot robot;
 
+    double liftInput;
+    int liftPause = 0;
+
     @Override
     public void runOpMode() {
         robot = new Robot(this);
@@ -24,8 +27,14 @@ public class maxTeleOp extends LinearOpMode {
 
             robot.aim (gamepad2.left_stick_x/2);
 
-            robot.lift(gamepad2.right_stick_y/2);
-            robot.lift(0.3);
+            liftInput = gamepad2.right_stick_y/2;
+            if(Math.abs(liftInput) > 0.2 || liftPause > 100) {
+                robot.lift(liftInput);
+                liftPause = 0;
+            } else {
+                liftPause += 1;
+                robot.lift(0.2);
+            }
 
             if (gamepad2.a) {
                 robot.spin(1);
@@ -42,6 +51,8 @@ public class maxTeleOp extends LinearOpMode {
             }
 
             telemetry.addData("Author", "Max");
+            telemetry.addData("liftPause", liftPause);
+            telemetry.addData("liftInput", liftInput);
             telemetry.update();
         }
     }

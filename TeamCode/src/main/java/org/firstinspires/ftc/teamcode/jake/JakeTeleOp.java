@@ -15,13 +15,39 @@ public class JakeTeleOp extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            double joystickY = gamepad1.left_stick_y;
-            robot.setPowers(joystickY, joystickY, joystickY, joystickY);
-            if (gamepad1.dpad_left) {
-                robot.frontLeft.setPower(1);
+            double drive = -gamepad1.left_stick_y;
+            double turn = gamepad1.left_stick_x;
+            double strafe = gamepad1.right_stick_x;
+
+            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
+
+            if (gamepad2.dpad_left) {
+                robot.aim(-0.5);
+            } else if (gamepad2.dpad_right) {
+                robot.aim(0.5);
+            } else {
+                robot.aim(0);
             }
 
-            telemetry.addData("author","Jake");
+            if (gamepad2.dpad_up) {
+                robot.lift(0.7);
+            } else if (gamepad2.dpad_down) {
+                robot.lift(-0.3);
+            } else {
+                robot.lift(0.01);
+            }
+
+            robot.spin(gamepad2.right_trigger - gamepad2.left_trigger);
+
+            if (gamepad2.a) {
+                robot.grab(-1);
+            } else if (gamepad2.b) {
+                robot.grab(1);
+            } else {
+                robot.grab(0);
+            }
+
+            telemetry.addData("author", "Charles");
             telemetry.update();
 
 

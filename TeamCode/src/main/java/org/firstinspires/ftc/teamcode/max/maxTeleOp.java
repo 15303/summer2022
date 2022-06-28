@@ -33,7 +33,7 @@ public class maxTeleOp extends LinearOpMode {
                 liftPause = 0;
             } else if (liftPause < 100) {
                 liftPause += 1;
-                robot.lift(0.1);
+                robot.lift(0.05);
             }
 
             if (gamepad2.a) {

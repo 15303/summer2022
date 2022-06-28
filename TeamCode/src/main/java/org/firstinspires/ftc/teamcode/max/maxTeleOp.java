@@ -17,13 +17,14 @@ public class maxTeleOp extends LinearOpMode {
         while (opModeIsActive()) {
             double drive = -gamepad1.left_stick_y;
             double turn = gamepad1.right_stick_x;
-            double strafe = gamepad1.left_stick_x;
+            double strafe = -gamepad1.left_stick_x;
 
 
             robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
 
-            robot.aim (gamepad2.left_stick_x);
-            robot.lift(gamepad2.right_stick_y);
+            robot.aim (gamepad2.left_stick_x/2);
+
+            robot.lift(gamepad2.right_stick_y/2);
 
             if (gamepad2.a) {
                 robot.spin(1);
@@ -32,7 +33,7 @@ public class maxTeleOp extends LinearOpMode {
             }
 
             if (gamepad2.right_trigger > 0) {
-                robot.grab(1);
+                robot.grab(-1);
             } else if (gamepad2.left_trigger > 0) {
                 robot.grab(1);
             } else {

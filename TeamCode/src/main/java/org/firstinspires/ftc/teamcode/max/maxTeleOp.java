@@ -28,12 +28,12 @@ public class maxTeleOp extends LinearOpMode {
             robot.aim (gamepad2.left_stick_x/2);
 
             liftInput = gamepad2.right_stick_y/2;
-            if(liftInput != 0 || liftPause >= 50) {
+            if(Math.abs(liftInput) > 0.2 || liftPause > 100) {
                 robot.lift(liftInput);
                 liftPause = 0;
             } else {
                 liftPause += 1;
-                robot.lift(0.8);
+                robot.lift(0.2);
             }
 
             if (gamepad2.a) {
@@ -51,6 +51,8 @@ public class maxTeleOp extends LinearOpMode {
             }
 
             telemetry.addData("Author", "Max");
+            telemetry.addData("liftPause", liftPause);
+            telemetry.addData("liftInput", liftInput);
             telemetry.update();
         }
     }

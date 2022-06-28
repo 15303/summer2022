@@ -20,8 +20,6 @@ public class IvanTeleOp extends LinearOpMode {
             if(gamepad1.dpad_left) {
                 robot.frontLeft.setPower(0);
             }
-            robot.setPowers(1,1,1,1);
-            robot.frontLeft.setPower(1);
 
             telemetry.addData("author", "Ivan");
             telemetry.update();

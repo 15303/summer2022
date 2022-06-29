@@ -21,7 +21,12 @@ public class ivan_autonomous extends LinearOpMode {
         sleep(1500);
         robot.spin(0);
         robot.turn(-0.78);
+        sleep(780);
+        robot.aim(0.5);
+        sleep(200);
         robot.driveComponent(-0.6,-0.2,-0.2);
+        sleep(2999);
+
     }
 }
 

@@ -68,6 +68,15 @@ public class Robot {
         setPowers(-power, power, power, -power);
     }
 
+    public void driveComponent(double drive, double turn, double strafe) {
+        setPowers(
+                drive + turn - strafe,
+                drive - turn + strafe,
+                drive + turn + strafe,
+                drive - turn - strafe
+        );
+    }
+
     public void aim(double power) {
         aimer.setPower(power);
     }

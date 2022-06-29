@@ -10,13 +10,18 @@ public class ivan_autonomous extends LinearOpMode {
     public void runOpMode() {
         Robot robot = new Robot(this);
 
-        robot.drive(0.5);
+        robot.strafe(0.7);
+        sleep(1750);
+        robot.strafe(0);
+        sleep(10);
+        robot.driveComponent(0.3,0.3,0);
         sleep(1000);
-        robot.drive(0);
-        sleep(500)
-        robot.turn(0.6);
-        sleep(1000);
-        robot.turn(0);
+        robot.driveComponent(0,0,0);
+        robot.spin(0.55);
+        sleep(1500);
+        robot.spin(0);
+        robot.turn(-0.78);
+        robot.driveComponent(-0.6,-0.2,-0.2);
     }
 }
 

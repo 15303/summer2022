@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Robot;
 
-@TeleOp(name="CharlesTeleOp")
+@TeleOp(name="Charles - TeleOp")
 public class CharlesTeleOp extends LinearOpMode {
     Robot robot;
 
@@ -19,7 +19,12 @@ public class CharlesTeleOp extends LinearOpMode {
             double turn = gamepad1.left_stick_x;
             double strafe = gamepad1.right_stick_x;
 
-            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
+            robot.setPowers(
+                    drive + turn - strafe,
+                    drive - turn + strafe,
+                    drive + turn + strafe,
+                    drive - turn - strafe
+            );
 
             if (gamepad2.dpad_left) {
                 robot.aim(-0.5);
@@ -34,7 +39,7 @@ public class CharlesTeleOp extends LinearOpMode {
             } else if (gamepad2.dpad_down) {
                 robot.lift(-0.3);
             } else {
-                robot.lift(0.01);
+                robot.lift(0.0);
             }
 
             robot.spin(gamepad2.right_trigger - gamepad2.left_trigger);

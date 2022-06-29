@@ -20,7 +20,7 @@ public class IvanTeleOp extends LinearOpMode {
 
             robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
             robot.aim(gamepad2.left_stick_x/2);
-            robot.lift(gamepad2.left_stick_y/2);
+            robot.lift(gamepad2.right_stick_y/2);
             if (gamepad2.right_bumper) {
                 robot.spin(0.4);
                 //TODO: make power negative if spinning other way
@@ -32,12 +32,11 @@ public class IvanTeleOp extends LinearOpMode {
             if (gamepad2.right_trigger==0) {
                 robot.grab(0.1);
             }
-
-
-
             telemetry.addData("makeor", "Ivan");
             telemetry.update();
 
         }
     }
 }
+// P1: Left joystick moves movement motors.
+// P2: Arm is left stick moving sideways, lifting is right stick moving vertically.

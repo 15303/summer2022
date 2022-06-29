@@ -20,7 +20,7 @@ public class IvanTeleOp extends LinearOpMode {
 
             robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
             robot.aim(gamepad2.left_stick_x);
-            robot.lift(gamepad2.left_stick_y);
+            robot.lift(gamepad2.left_stick_y/2);
             if (gamepad2.right_bumper) {
                 robot.spin(0.4);
                 //TODO: make power negative if spinning other way

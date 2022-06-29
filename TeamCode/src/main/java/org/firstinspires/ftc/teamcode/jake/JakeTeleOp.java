@@ -19,7 +19,7 @@ public class JakeTeleOp extends LinearOpMode {
             double turn = gamepad1.left_stick_x;
             double strafe = gamepad1.right_stick_x;
 
-            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
+            robot.setPowers((drive + turn - strafe)/2, (drive - turn + strafe)/2, (drive + turn + strafe)/2, (drive - turn - strafe)/2);
 
             if (gamepad2.dpad_left) {
                 robot.aim(-0.2);

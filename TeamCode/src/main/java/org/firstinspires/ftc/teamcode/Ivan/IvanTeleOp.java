@@ -19,28 +19,21 @@ public class IvanTeleOp extends LinearOpMode {
             double strafe = gamepad1.right_stick_x;
 
             robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
-            if (gamepad2.dpad_right) {
-                robot.aim(0.5);
-            }
-            else{
-                robot.aim(0); }
-            if (gamepad2.dpad_up) {
-                robot.lift(0.5);
-            }
-            else if (gamepad2.dpad_down)
-            {
-                robot.lift(-0.5);
-            }
-            else {
-                robot.lift(0);
-            }
+            robot.aim(gamepad2.left_stick_x);
+            robot.lift(gamepad2.left_stick_y);
             if (gamepad2.right_bumper) {
-                robot.spin(0.7);
+                robot.spin(0.4);
                 //TODO: make power negative if spinning other way
             }
             else {
                 robot.spin(0);
             }
+            robot.grab(gamepad2.right_trigger-gamepad2.left_trigger);
+            if (gamepad2.right_trigger==0) {
+                robot.grab(0.1);
+            }
+
+
 
             telemetry.addData("makeor", "Ivan");
             telemetry.update();

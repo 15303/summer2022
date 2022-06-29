@@ -9,20 +9,14 @@ public class JakeAutonomous extends LinearOpMode{
     @Override
     public void runOpMode(){
         Robot robot = new Robot(this);
+        waitForStart();
 
-        robot.strafe(1);
+
+        robot.drive(-1);
         sleep(1000);
-        robot.strafe(0);
+        robot.drive(0);
 
-        robot.spin(1);
-        sleep(5000);
-        robot.spin(0);
-
-        robot.strafe(1);
-        sleep(1000);
-        robot.strafe(0);
-
-        robot.turn(-1);
+        robot.turn(1);
         sleep(1000);
         robot.turn(0);
 

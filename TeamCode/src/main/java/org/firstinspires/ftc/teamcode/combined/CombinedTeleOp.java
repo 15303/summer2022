@@ -19,9 +19,9 @@ public class CombinedTeleOp extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            double drive = (gamepad1.right_trigger - gamepad1.left_trigger);
-            double turn = gamepad1.right_stick_x;
-            double strafe = gamepad1.left_stick_x;
+            double drive = (gamepad1.right_trigger - gamepad1.left_trigger)/3;
+            double turn = gamepad1.right_stick_x/3;
+            double strafe = gamepad1.left_stick_x/3;
 
 //            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
             robot.driveComponent(drive, turn, strafe);

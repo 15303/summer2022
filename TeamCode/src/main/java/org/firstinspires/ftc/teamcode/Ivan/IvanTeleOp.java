@@ -14,7 +14,7 @@ public class IvanTeleOp extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            double drive = -gamepad1.left_stick_y;
+            double drive = -gamepad1.right_trigger-gamepad1.left_trigger;
             double turn = gamepad1.left_stick_x;
             double strafe = gamepad1.right_stick_x;
 
@@ -23,7 +23,6 @@ public class IvanTeleOp extends LinearOpMode {
             robot.lift(gamepad2.right_stick_y/2);
             if (gamepad2.right_bumper) {
                 robot.spin(0.4);
-                //TODO: make power negative if spinning other way
             }
             else {
                 robot.spin(0);
@@ -32,11 +31,18 @@ public class IvanTeleOp extends LinearOpMode {
             if (gamepad2.right_trigger==0) {
                 robot.grab(0.1);
             }
+            if (gamepad1.a)
+                robot.drive(1);
             telemetry.addData("makeor", "Ivan");
             telemetry.update();
 
         }
     }
 }
-// P1: Left joystick moves movement motors.
-// P2: Arm is left stick moving sideways, lifting is right stick moving vertically.
+// P1: Right trigger   TODO accelerate/forwards
+// P1: Left trigger  TODO backwards
+// P1: A button  TODO boosts forward
+// P1: Left and right bumpers TODO strafe left and right
+// P2: Arm is left stick moving sideways, lifting is right stick moving TODO vertically.
+// P2: Right and left triggers  TODO grabber
+// P2: Right bumper TODO spins duck

@@ -26,8 +26,8 @@ public class CombinedTeleOp extends LinearOpMode {
 //            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
             robot.driveComponent(drive, turn, strafe);
 
-            robot.aim (-gamepad2.right_stick_x/2);
-            liftInput = gamepad2.right_stick_y/2;
+            robot.aim (-gamepad2.left_stick_x/2);
+            liftInput = gamepad2.left_stick_y/2;
                 robot.lift(liftInput);
 
             if (gamepad2.y) {

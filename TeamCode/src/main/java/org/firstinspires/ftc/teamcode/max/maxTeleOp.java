@@ -26,7 +26,7 @@ public class maxTeleOp extends LinearOpMode {
 //            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
             robot.driveComponent(drive, turn, strafe);
 
-            robot.aim (gamepad2.right_stick_x/2);
+            robot.aim (-gamepad2.right_stick_x/2);
             liftInput = gamepad2.right_stick_y/2;
                 robot.lift(liftInput);
 
@@ -36,10 +36,10 @@ public class maxTeleOp extends LinearOpMode {
                 robot.spin(0);
             }
 
-            if (gamepad2.b) {
+            if (gamepad2.a) {
                 robot.grab(-1);
                 isGrabbing = true;
-            } else if (gamepad2.a) {
+            } else if (gamepad2.b) {
                 robot.grab(1);
                 isGrabbing = false;
             } else {

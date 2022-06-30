@@ -27,7 +27,6 @@ public class maxTeleOp extends LinearOpMode {
             robot.driveComponent(drive, turn, strafe);
 
             robot.aim (gamepad2.right_stick_x/2);
-
             liftInput = gamepad2.right_stick_y/2;
                 robot.lift(liftInput);
 

@@ -31,18 +31,25 @@ public class IvanTeleOp extends LinearOpMode {
             if (gamepad2.right_trigger==0) {
                 robot.grab(0.1);
             }
-            if (gamepad1.a)
+            if (gamepad1.a) {
                 robot.drive(1);
+            }
+            if (gamepad1.b) {
+                robot.drive(-0.8);
+            }
             telemetry.addData("makeor", "Ivan");
             telemetry.update();
 
+            }
+
         }
     }
-}
 // P1: Right trigger   TODO accelerate/forwards
 // P1: Left trigger  TODO backwards
+// P1: Joysticks TODO left and right
 // P1: A button  TODO boosts forward
-// P1: Left and right bumpers TODO strafe left and right
-// P2: Arm is left stick moving sideways, lifting is right stick moving TODO vertically.
+// P1: B button  TODO boosts backwards?????
+// P1: Left and right bumpers  TODO strafe left and right
+// P2: Arm is left stick moving sideways, lifting is right stick moving  TODO vertically.
 // P2: Right and left triggers  TODO grabber
-// P2: Right bumper TODO spins duck
+// P2: Right bumper  TODO spins duck

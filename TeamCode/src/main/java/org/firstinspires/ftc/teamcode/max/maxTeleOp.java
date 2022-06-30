@@ -11,6 +11,7 @@ public class maxTeleOp extends LinearOpMode {
 
     double liftInput;
     int liftPause = 0;
+    boolean isGrabbing;
 
     @Override
     public void runOpMode() {
@@ -18,14 +19,14 @@ public class maxTeleOp extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            double drive = -gamepad1.left_stick_y/3;
-            double turn = gamepad1.right_stick_x/3;
-            double strafe = -gamepad1.left_stick_x/3;
+            double drive = (gamepad1.right_trigger - gamepad1.left_trigger)/2;
+            double turn = gamepad1.right_stick_x/2;
+            double strafe = -gamepad1.left_stick_x/2;
 
+//            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
+            robot.driveComponent(drive, turn, strafe);
 
-            robot.setPowers(drive + turn - strafe, drive - turn + strafe, drive + turn + strafe, drive - turn - strafe);
-
-            robot.aim (gamepad2.left_stick_x/2);
+            robot.aim (gamepad2.right_stick_x/2);
 
             liftInput = gamepad2.right_stick_y/2;
                 robot.lift(liftInput);
@@ -38,10 +39,14 @@ public class maxTeleOp extends LinearOpMode {
 
             if (gamepad2.b) {
                 robot.grab(-1);
+                isGrabbing = true;
             } else if (gamepad2.a) {
                 robot.grab(1);
+                isGrabbing = false;
             } else {
-                robot.grab(0);
+                if (isGrabbing) {
+                    robot.grab(-0.2);
+                }
             }
 
             telemetry.addData("Author", "Max");

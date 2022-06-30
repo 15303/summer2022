@@ -17,8 +17,8 @@ public class CharlesAutonomous extends LinearOpMode {
         //drive away from wall to carousel
         robot.strafe(0.75);
         sleep(400);
-        robot.drive(-0.1);
-        sleep(200);
+        robot.drive(-0.3);
+        sleep(500);
         robot.drive(0);
         sleep(300);
 

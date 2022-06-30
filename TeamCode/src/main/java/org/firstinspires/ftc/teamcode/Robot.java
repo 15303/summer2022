@@ -43,6 +43,8 @@ public class Robot {
         lifter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lifter.setDirection(DcMotorSimple.Direction.REVERSE);
         lifter.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        aimer.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
     public void start() {

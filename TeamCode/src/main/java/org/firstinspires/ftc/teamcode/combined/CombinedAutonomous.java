@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.Robot;
 
-@Autonomous(name = "Jake - Autonomous")
+@Autonomous(name = "Combined Autonomous")
 public class CombinedAutonomous extends LinearOpMode{
     @Override
     public void runOpMode(){

@@ -45,6 +45,8 @@ public class CombinedTeleOp extends LinearOpMode {
             } else {
                 if (isGrabbing) {
                     robot.grab(-0.2);
+                } else {
+                    robot.grab(0);
                 }
             }
 
